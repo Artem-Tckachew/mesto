@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto</title>
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">
+      <img src="./images/Logo.png" alt="Логотип" class="header__logo">
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__avatar" name="avatar">
+          <div class="profile__avatar profile__avatar_hover"></div>
+        </div>
+        <div class="profile__intro">
+          <h2 class="profile__title" name="name"></h2>
+          <p class="profile__subtitle" name="about"></p>
+          <button type="button" class="profile__edit"></button>
+        </div>
+        <button type="button" class="profile__add"></button>
+      </section>
+
+      <section class='elements'>
+
+      </section>
+
+    </main>
+    <footer class="footer">
+      <p class="footer__author">&#169; 2020 Mesto Russia</p>
+    </footer>
+
+    <section class="overlay overlay_avatar" novalidate>
+      <form class="popup popup_form popup_avatar">
+        <fieldset class="form">
+          <legend class="popup__title">Обновить аватар</legend>
+          <input type="url" class="form__input form__input_avatar popup__input" id="input-avatar" name="profileAvatar"
+            required>
+          <span class="input-avatar-error"></span>
+          <button type="submit" class="popup__button form__submit">Сохранить</button>
+        </fieldset>
+        <button type="button" class="popup__close popup__close_avatar"></button>
+      </form>
+    </section>
+
+    <section class="overlay overlay_submit" novalidate>
+      <form class="popup popup_form popup_submit">
+        <fieldset class="form">
+          <legend class="popup__title">Вы уверены?</legend>
+          <button type="submit" class="popup__button form__submit">Да</button>
+        </fieldset>
+        <button type="button" class="popup__close popup__close_submit"></button>
+      </form>
+    </section>
+
+    <section class="overlay overlay_profile" novalidate>
+      <form class="popup popup_form popup_profile">
+        <fieldset class="form">
+          <legend class="popup__title">Редактировать профиль</legend>
+          <input type="text" class="form__input form__input_name popup__input" id="input-name" name="profileTitle"
+            minlength="2" maxlength="40" required>
+          <span class="input-name-error"></span>
+          <input type="text" class="form__input form__input_job popup__input" id="input-job" name="profileSubTitle"
+            minlength="2" maxlength="200" required>
+          <span class="input-job-error"></span>
+          <button type="submit" class="popup__button form__submit">Сохранить</button>
+        </fieldset>
+        <button type="button" class="popup__close popup__close_profile"></button>
+      </form>
+    </section>
+
+    <section class="overlay overlay_addcard" novalidate>
+      <form class="popup popup_form popup_add">
+        <fieldset class="form">
+          <legend class="popup__title">Новое Место</legend>
+          <input type="text" class="form__input form__input_title popup__input" id="input-mesto" name="name"
+            placeholder="Название" minlength="2" maxlength="30" required>
+          <span class="input-mesto-error"></span>
+          <input type="url" class="form__input form__input_link popup__input" id="input-url" name="link"
+            placeholder="Ссылка на картинку" required>
+          <span class="input-url-error"></span>
+          <button type="submit" class="popup__button form__submit form__submit_add">Создать</button>
+        </fieldset>
+        <button type="button" class="popup__close popup__close_add"></button>
+      </form>
+    </section>
+
+    <section class="overlay overlay_img">
+      <figure class="popup popup_imgcard">
+        <button type="button" class="popup__close popup__close_img"></button>
+        <img class="popup__img" src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+          alt="Эльбрус">
+        <figcapiton class="popup__imgcapiton" name="fig">Гора Эльбрус</figcapiton>
+      </figure>
+    </section>
+
+  </div>
+
+  <template class="element__template">
+    <article class="element">
+      <button type="button" class="element__remove"></button>
+      <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Эльбрус" class="element__image">
+      <div class="element__description">
+        <h2 class="element__title">Гора Эльбрус</h2>
+        <div class="element__likes">
+          <button type="button" class="element__like"></button>
+          <p class="element__like_count"></p>
+        </div>
+      </div>
+    </article>
+  </template>
+</body>
+
+</html>
